@@ -77,7 +77,7 @@ module.exports = {
             // const refreshToken = fullrefreshToken.split(' ')[1]
             const refreshToken = req.body.refreshtoken
             if (!refreshToken) throw creatError.BadRequest()
-            // console.log(refreshToken)
+            console.log(refreshToken)
             const userid = await verifyRefreshToken(refreshToken)
             console.log(userid)
             user = await users.findOne({ where: { id: userid } })
